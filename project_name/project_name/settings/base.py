@@ -56,16 +56,36 @@ STATICFILES_FINDERS = (
 ########## END STATIC FILE CONFIGURATION
 
 ##### TEMPLATE FILE CONFIGURATION
-TEMPLATE_DIRS = (
-    os.path.normpath(os.path.join(SITE_ROOT, 'templates')),
-)
-
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            os.path.normpath(os.path.join(SITE_ROOT, 'templates')),
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                # Insert your TEMPLATE_CONTEXT_PROCESSORS here or use this
+                # list if you haven't customized them:
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.contrib.messages.context_processors.messages',
+                # to process request in template
+                'django.core.context_processors.request',
+            ],
+        },
+    },
+]
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'Fuck the World!'
+SECRET_KEY = 'help the World!'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
