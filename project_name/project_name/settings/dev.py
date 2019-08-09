@@ -26,18 +26,22 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ########## DATABASE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/1.7/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'dbname',
+#         'USER': 'username',
+#         'PASSWORD': 'badpassword',
+#         'HOST': '127.0.0.1',
+
+#     },
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dbname',
-        'USER': 'username',
-        'PASSWORD': 'badpassword',
-        'HOST': '127.0.0.1',
-
-    },
-
-
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(SITE_ROOT, 'db.sqlite3'),
+    }
 }
 
 #DATABASE_ROUTERS = ['appname.router.AppRouter',]
