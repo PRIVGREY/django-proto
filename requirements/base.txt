@@ -1,5 +1,5 @@
 # Django
-Django==2.2.4
+Django=={{django_version}}
 
 #For the persistance stores
 psycopg2==2.8.3

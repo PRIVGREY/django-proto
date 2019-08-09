@@ -24,7 +24,7 @@ Install Django::
 
 To create the project, run the following command::
 
-    django-admin.py startproject --template=https://github.com/privgrey/django-proto/archive/master.zip --extension=py,rst,html project_name
+    django-admin.py startproject --template=https://github.com/privgrey/django-proto/archive/master.zip --extension=py,rst,html --name project_name.conf,uwsgi.ini,base.txt,prod.txt  project_name
 
 
 
